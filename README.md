@@ -6,7 +6,7 @@ Este é um projeto Angular desenvolvido para Restic36 como parte da avaliação 
 
 Verifique se você possui os seguintes softwares instalados:
 
-- [Node.js](https://nodejs.org/) (v14 ou superior)
+- [Node.js](https://nodejs.org/) (Recomendada a versão v20.11.1 ou superior)
 - [Angular CLI](https://angular.io/cli) (se ainda não tiver, você pode instalá-lo globalmente com o comando `npm install -g @angular/cli`)
 
 O projeto foi desenvolvido na versão do Angular 18.2.4
@@ -20,6 +20,14 @@ O projeto foi desenvolvido na versão do Angular 18.2.4
    cd BurguerMania-UI
    ```
 
+2. **Instale o Angular CLI caso não tenha**:
+
+   Execute o seguinte comando:
+
+   ```bash
+   npm install -g @angular/cli
+   ```
+   
 2. **Instale as dependências**:
 
    Execute o seguinte comando para instalar todas as dependências necessárias do projeto:
@@ -36,7 +44,7 @@ O projeto foi desenvolvido na versão do Angular 18.2.4
    ng add @angular/material
    ```
 
-   Siga as instruções para escolher o tema e a configuração.
+   Caso o material altere o arquivo styles.scss descarte as alterações pois isso pode impedir a execução do projeto
 
 4. **Instale o JSON Server**:
 
@@ -68,7 +76,7 @@ Isso fará com que o JSON Server escute as alterações no arquivo `db.json` e d
 No projeto, o banco de dados está na em public/db.json
 
 ## Tecnologias utilizadas
-- Angular versão 18.2.4
+- Angular versão 18.2.13
 - Angular Material
 - Json Server
 
