@@ -1,1 +1,49 @@
-/* You can add global styles to this file, and also import other style files */
+@use '@angular/material' as mat;
+
+@include mat.core();
+
+$BurgueMania-UI-theme: mat.define-theme((
+  color: (
+    theme-type: light,
+    primary: mat.$red-palette,
+    tertiary: mat.$orange-palette,
+  ),
+  density: (
+    scale: 0,
+  )
+));
+
+:root {
+  @include mat.all-component-themes($BurgueMania-UI-theme);
+  --text-color: #521D16;
+  --title-color: #ED0000;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: 'Sans-Serif', Arial, sans-serif;
+  color: var(--text-color);
+}
+
+h1 {
+  color: var(--title-color);
+  text-align: center;
+  font-size: 2em;
+}
+
+.mdc-button {
+  color: var(--text-color) !important;
+}
+
+.container {
+  width: 100%;
+  min-height: 90vh;
+  max-width: 1440px;
+  align-items: center;
+  margin: 0 auto;
+}

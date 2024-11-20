@@ -1,0 +1,13 @@
+<div class="container">
+  <h1>PEDIDO</h1>
+  <mat-card appearance="outlined">
+
+    <app-input (formSubmit)="onFormSubmit($event)"/>
+
+    <app-button
+      class="action-bnt"
+      [r_label]="configButton.finish.label"
+      [r_style]="configButton.finish.style"
+      (click)="onSubmit()" />
+  </mat-card>
+</div>

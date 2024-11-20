@@ -1,0 +1,70 @@
+.container {
+    display: flex;
+    flex-direction: column; // Para empilhar as linhas
+  }
+
+  .row {
+    display: flex;
+    flex-wrap: nowrap; // Padrão para não quebrar linha
+
+    &.wrap {
+      flex-wrap: wrap; // Permite quebra de linha se a classe for aplicada
+    }
+
+    &.gap-8 {
+      gap: 8px; // Espaçamento entre colunas
+    }
+    &.gap-16 {
+      gap: 16px; // Espaçamento entre colunas
+    }
+  }
+
+  .column {
+    &.col-1 {
+      flex: 0 0 calc(8.33% - 8px); // 1 coluna
+    }
+
+    &.col-2 {
+      flex: 0 0 calc(16.67% - 8px); // 2 colunas
+    }
+
+    &.col-3 {
+      flex: 0 0 calc(25% - 8px); // 3 colunas
+    }
+
+    &.col-4 {
+      flex: 0 0 calc(33.33% - 8px); // 4 colunas
+    }
+
+    &.col-5 {
+      flex: 0 0 calc(41.67% - 8px); // 5 colunas
+    }
+
+    &.col-6 {
+      flex: 0 0 calc(50% - 8px); // 6 colunas
+    }
+
+    &.col-7 {
+      flex: 0 0 calc(58.33% - 8px); // 7 colunas
+    }
+
+    &.col-8 {
+      flex: 0 0 calc(66.67% - 8px); // 8 colunas
+    }
+
+    &.col-9 {
+      flex: 0 0 calc(75% - 8px); // 9 colunas
+    }
+
+    &.col-10 {
+      flex: 0 0 calc(83.33% - 8px); // 10 colunas
+    }
+
+    &.col-11 {
+      flex: 0 0 calc(91.67% - 8px); // 11 colunas
+    }
+
+    &.col-12 {
+      flex: 0 0 100%; // 12 colunas
+    }
+  }

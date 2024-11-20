@@ -1,0 +1,15 @@
+<section class="container">
+  <h1>CARDÁPIO</h1>
+
+  <div class="row wrap grid-area">
+    @for (item of displayedCategories; track $index) {
+        <app-card class="column col-4" [r_item]="item" [r_allowHover]="true" (click)="onCategoryClick(item)" />
+    }
+  </div>
+
+  <app-button
+    [r_label]="showAll ? 'MOSTRAR MENOS' : configButton.seeFullMenu.label"
+    [r_style]="configButton.seeFullMenu.style"
+    (click)="toggleCategories()"/>
+
+</section>

@@ -1,0 +1,16 @@
+.price {
+  width: 100%;
+  text-align: start;
+  font-size: 2.5em;
+
+  .text-area {
+    width: 330px;
+    text-align: center;
+    font-weight: 700;
+  }
+}
+
+.row {
+  max-width: 1030px;
+  justify-content: space-between;
+}

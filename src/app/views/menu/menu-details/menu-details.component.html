@@ -1,0 +1,15 @@
+<section class="container">
+  <h1>DETALHES</h1>
+
+  <div class="row wrap">
+      <app-card class="collumn col-4" [r_item]="product" [r_allowHover]="false" />
+      <app-description class="collumn col-7" [r_detailedDescription]="product.detailedDescription"/>
+
+      <div class="collumn col-12 price">
+        <div class="text-area">{{ product.price | number:'1.2-2' }} R$</div>
+      </div>
+    </div>
+
+  <app-button [r_label]="configButton.purchase.label"  [r_style]="configButton.purchase.style" (eventClick)="onPurchaseClick()"/>
+
+</section>

@@ -1,0 +1,7 @@
+<section class="container">
+  <app-container-img [r_pathImg]="'assets/images/triple-burguer.png'"/>
+  <section class="action">
+    <app-button [r_label]="configButton.placeOrder.label"  [r_style]="configButton.placeOrder.style" (eventClick)="onPlaceOrderClick()"/>
+    <app-button [r_label]="configButton.accessMenu.label"  [r_style]="configButton.accessMenu.style" (eventClick)="onAccessMenuClick()"/>
+  </section>
+</section>

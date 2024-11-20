@@ -1,0 +1,57 @@
+<div class="form-container">
+
+  <form [formGroup]="form">
+
+    <div formArrayName="products">
+
+      @for (product of products.controls; track $index) {
+
+      <div>
+        <div [formGroupName]="$index" class="row">
+
+          <div class="column">
+
+            <mat-form-field appearance="outline" [floatLabel]="'always'">
+              <mat-label>Produto</mat-label>
+              <input matInput formControlName="product"/>
+
+              @if (product.get('product')?.hasError('required')) {
+                <mat-error>O campo é obrigatório.</mat-error>
+              }
+            </mat-form-field>
+
+          </div>
+
+          <div class="column">
+
+            <mat-form-field appearance="outline" [floatLabel]="'always'">
+              <mat-label>Quantidade</mat-label>
+              <input matInput type="number" formControlName="quantity"/>
+
+              @if (product.get('quantity')?.hasError('required')) {
+                <mat-error>O campo é obrigatório.</mat-error>
+              }
+              @if (product.get('quantity')?.hasError('min')) {
+                <mat-error>A quantidade deve ser maior que zero.</mat-error>
+              }
+            </mat-form-field>
+          </div>
+
+          @if (products.length > 1) {
+            <button mat-icon-button (click)="removeProduct($index)">
+              <mat-icon>remove_circle</mat-icon>
+            </button>
+          }
+        </div>
+      </div>
+      }
+    </div>
+
+    <button mat-mini-fab color="primary" type="button" (click)="addProduct()">+</button>
+
+    <mat-form-field appearance="outline" class="full-width" [floatLabel]="'always'">
+      <mat-label>Observação</mat-label>
+      <textarea matInput formControlName="notes"></textarea>
+    </mat-form-field>
+  </form>
+</div>

@@ -1,0 +1,25 @@
+.mat-toolbar {
+  padding: 16px;
+  justify-content: center;
+  height: auto !important;
+  background-color: #fff;
+}
+
+.toolbar-container {
+  width: 100%;
+  max-width: 1440px;
+}
+
+.column {
+  display: flex;
+  align-items: center;
+}
+
+.actions {
+  justify-content: end;
+}
+
+.mdc-button {
+  margin: auto 8x auto 8px;
+  font-size: 1em;
+}

@@ -1,0 +1,102 @@
+{
+  "categories": [
+    {
+      "id": "1",
+      "name": "X-Vegan",
+      "description": "Deliciosos hambúrgueres feitos com todo o carinho, 100% vegetais e cheios de sabor. Perfeito para quem busca uma refeição consciente e deliciosa!",
+      "image": "assets/images/burguer.png"
+    },
+    {
+      "id": "2",
+      "name": "X-Fitness",
+      "description": "Hambúrgueres leves e nutritivos para quem quer manter o foco na saúde, sem abrir mão do sabor. Feitos com ingredientes frescos e integrais!",
+      "image": "assets/images/burguer.png"
+    },
+    {
+      "id": "3",
+      "name": "X-Infarto",
+      "description": "Para os corajosos! Hambúrgueres generosos, cheios de bacon, queijos derretidos e molhos que vão fazer você sorrir a cada mordida.",
+      "image": "assets/images/burguer.png"
+    },
+    {
+      "id": "4",
+      "name": "X-Deluxe",
+      "description": "Uma experiência gourmet! Hambúrgueres feitos com ingredientes premium, combinações sofisticadas e um toque de exclusividade.",
+      "image": "assets/images/burguer.png"
+    }
+  ],
+"products": [
+    {
+      "id": "1",
+      "name": "X-Alface-Premium",
+      "categoryId": "1",
+      "description": "Pão, Hambúrguer vegano, alface crocante, molho especial e temperos inconfundíveis.",
+      "detailedDescription": "Um hambúrguer vegano suculento feito com uma base de grão-de-bico e quinoa, temperado com especiarias defumadas, cebola caramelizada e alho, garantindo uma textura rica e saborosa. Servido em um pão macio, ele vem acompanhado de fatias frescas de tomate, alface crocante, picles, abacate cremoso e uma generosa camada de maionese de ervas vegana. Finalizado com molho barbecue agridoce e uma pitada de pimenta-do-reino moída na hora, proporcionando uma combinação deliciosa de sabores e texturas em cada mordida.",
+      "price": 22.50,
+      "image": "assets/images/burguer.png"
+    },
+    {
+      "id": "2",
+      "name": "X-Tomate",
+      "categoryId": "1",
+      "description": "Pão, Hambúrguer vegano, tomate fresco, cebola caramelizada e mostarda artesanal.",
+      "detailedDescription": "Este hambúrguer vegano traz um pão macio recheado com uma deliciosa combinação de tomate fresco, cebola caramelizada e um toque de mostarda artesanal. O hambúrguer vegano é preparado com especiarias especiais para um sabor marcante e harmonioso. A adição de alface crocante e molho especial finaliza o prato com uma textura fresca e saborosa.",
+      "price": 24.00,
+      "image": "assets/images/burguer.png"
+    },
+    {
+      "id": "3",
+      "name": "X-Frutas",
+      "categoryId": "1",
+      "description": "Pão, Hambúrguer vegano, frutas frescas, molho agridoce e temperos especiais.",
+      "detailedDescription": "Este hambúrguer vegano inovador combina o sabor refrescante de frutas frescas com um molho agridoce que faz uma fusão perfeita com o hambúrguer preparado com grãos selecionados. O prato é servido com pão macio e alface crocante, oferecendo uma experiência única de sabores doce e salgado com um toque de temperos especiais.",
+      "price": 23.00,
+      "image": "assets/images/burguer.png"
+    },
+    {
+      "id": "7",
+      "name": "X-Abacate-Avocado",
+      "categoryId": "1",
+      "description": "Pão, Hambúrguer vegano, abacate cremoso, alface, tomate, molho especial e especiarias.",
+      "detailedDescription": "Este hambúrguer vegano combina uma generosa camada de abacate cremoso com o sabor suave do hambúrguer preparado com vegetais frescos. O abacate, juntamente com alface e tomate frescos, cria um contraste refrescante, enquanto o molho especial e as especiarias proporcionam um toque de sabor e cremosidade únicos.",
+      "price": 25.00,
+      "image": "assets/images/burguer.png"
+    },
+    {
+      "id": "8",
+      "name": "X-Lentilha-Protein",
+      "categoryId": "1",
+      "description": "Pão, Hambúrguer de lentilha, alface, tomate, cebola roxa e molho de tahine.",
+      "detailedDescription": "Este hambúrguer de lentilha é uma excelente fonte de proteínas, preparado com uma mistura de lentilhas e temperos especiais. O prato é servido em um pão macio, com alface crocante, tomate fresco, cebola roxa e um molho de tahine que dá um sabor cremoso e delicioso, complementando perfeitamente o hambúrguer saudável e nutritivo.",
+      "price": 26.50,
+      "image": "assets/images/burguer.png"
+    },
+    {
+      "id": "4",
+      "name": "X-Fitness-Leve",
+      "categoryId": "2",
+      "description": "Pão, Peito de frango grelhado, alface, tomate, molho light e especiarias.",
+      "detailedDescription": "Este hambúrguer fitness traz uma combinação equilibrada com peito de frango grelhado, alface fresca, tomate e um molho light. Servido em um pão integral, este prato é ideal para quem busca uma refeição leve e saborosa, mas sem abrir mão do sabor. O toque de especiarias garante um sabor irresistível e saudável.",
+      "price": 27.00,
+      "image": "assets/images/burguer.png"
+    },
+    {
+      "id": "5",
+      "name": "X-Queijo-Bacon",
+      "categoryId": "3",
+      "description": "Pão, Hambúrguer, muito queijo, bacon crocante, molho especial e temperos secretos.",
+      "detailedDescription": "Um hambúrguer recheado com uma abundância de queijo derretido e bacon crocante, servido em um pão macio e complementado por um molho especial e temperos secretos que elevam o sabor a um novo nível. Este hambúrguer é ideal para quem adora uma refeição indulgente e cheia de sabor.",
+      "price": 28.50,
+      "image": "assets/images/burguer.png"
+    },
+    {
+      "id": "6",
+      "name": "X-Deluxe-Sophisticate",
+      "categoryId": "4",
+      "description": "Pão, Hambúrguer de carne premium, molho trufado, queijo brie e especiarias finas.",
+      "detailedDescription": "Este hambúrguer gourmet é preparado com carne premium de alta qualidade, que é complementada por um molho trufado delicado e queijo brie. O pão macio serve como base para essa combinação sofisticada, que é finalizada com uma pitada de especiarias finas. Um prato que oferece uma experiência única para os amantes de sabores refinados.",
+      "price": 35.00,
+      "image": "assets/images/burguer.png"
+    }
+  ]
+}
