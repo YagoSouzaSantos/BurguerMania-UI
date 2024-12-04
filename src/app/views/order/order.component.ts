@@ -1,10 +1,14 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, inject, OnInit, ViewChild } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { ButtonComponent } from "../../components/button/button.component";
 import { InputComponent } from "../../components/input/input.component";
 import { OrderFormData } from '../../interfaces/order-form-data';
+import { ProductService } from '../../services/product.service';
+import { OrderService } from '../../services/order.service';
+import { SnackbarService } from '../../services/snackbar.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-order',
@@ -15,6 +19,9 @@ import { OrderFormData } from '../../interfaces/order-form-data';
 })
 export class OrderComponent {
   @ViewChild(InputComponent) inputComponent!: InputComponent;
+  #orderService = inject(OrderService)
+  #router = inject(Router)
+  #snackbarService = inject(SnackbarService);
 
   formData: OrderFormData | null = null;
 
@@ -30,9 +37,24 @@ export class OrderComponent {
   }
 
   // Método para receber os dados do formulário e realizar envio
-  // Será substiuido quando a API estiver pronta, apenas para testes
   onFormSubmit(data: OrderFormData): void {
     this.formData = data;
-    console.log('Pedido:', this.formData);
+
+    this.#orderService.createOrder(this.formData).subscribe(
+      (response) => {
+        this.#snackbarService.showSuccess('Pedido realizado com sucesso!');
+        this.inputComponent.resetForm();
+        this.#router.navigate(['']);
+      },
+      (error) => {
+        let errorMessage: string;
+        if (error.error && error.error.message) {
+          errorMessage = error.error.message;
+        } else {
+          errorMessage = 'Ocorreu um erro ao criar o pedido.';
+        }
+        this.#snackbarService.showError(errorMessage);
+      }
+    );
   }
 }

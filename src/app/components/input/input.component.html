@@ -10,16 +10,14 @@
         <div [formGroupName]="$index" class="row">
 
           <div class="column">
-
             <mat-form-field appearance="outline" [floatLabel]="'always'">
               <mat-label>Produto</mat-label>
-              <input matInput formControlName="product"/>
-
-              @if (product.get('product')?.hasError('required')) {
-                <mat-error>O campo é obrigatório.</mat-error>
-              }
+              <mat-select formControlName="productId">
+                @for (product of productList ; track $index) {
+                  <mat-option [value]="product.id">{{product.name}}</mat-option>
+                }
+              </mat-select>
             </mat-form-field>
-
           </div>
 
           <div class="column">

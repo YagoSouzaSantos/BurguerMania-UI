@@ -10,11 +10,15 @@ import { Observable } from 'rxjs';
 export class ProductService {
   private http = inject(HttpClient);
 
+  getAll( ): Observable<Product[]> {
+    return this.http.get<Product[]>(`${environment.apiUrl}/products/`);
+  }
+
   getProductById(id: string): Observable<Product> {
     return this.http.get<Product>(`${environment.apiUrl}/products/${id}`);
   }
 
   getProductsByCategory(categoryId: string): Observable<Product[]> {
-    return this.http.get<Product[]>(`${environment.apiUrl}/products?categoryId=${categoryId}`);
+    return this.http.get<Product[]>(`${environment.apiUrl}/products/category/${categoryId}`);
   }
 }

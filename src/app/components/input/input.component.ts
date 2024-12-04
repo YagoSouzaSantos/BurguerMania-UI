@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, inject, OnInit, Output } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -6,17 +6,22 @@ import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { OrderFormData } from '../../interfaces/order-form-data';
+import { ProductService } from '../../services/product.service';
+import { Product } from '../../interfaces/product';
+import { MatSelectModule } from '@angular/material/select';
 
 @Component({
   selector: 'app-input',
   standalone: true,
-  imports: [ ReactiveFormsModule, MatInputModule, MatFormFieldModule, MatButtonModule, MatIconModule, CommonModule],
+  imports: [ ReactiveFormsModule, MatInputModule, MatFormFieldModule, MatButtonModule, MatIconModule, CommonModule, MatSelectModule],
   templateUrl: './input.component.html',
   styleUrl: './input.component.scss'
 })
-export class InputComponent {
+export class InputComponent implements OnInit {
   @Output() formSubmit: EventEmitter<OrderFormData> = new EventEmitter<OrderFormData>();
+  private productService = inject(ProductService)
 
+  productList: Product[] = [];
   form: FormGroup;
 
   constructor(private fb: FormBuilder) {
@@ -26,10 +31,21 @@ export class InputComponent {
     });
   }
 
+  ngOnInit(): void {
+    this.productService.getAll().subscribe(
+      (response) => {
+        this.productList = response;
+      },
+      (error) => {
+        console.error('Erro ao carregar produtos', error);
+      }
+    );
+  }
+
   // Cria o produto que será utilizado para adição no array de produtos do form
   createProduct(): FormGroup {
     return this.fb.group({
-      product: ['', Validators.required],
+      productId: ['', Validators.required],
       quantity: [1, [Validators.required, Validators.min(1)]]
     });
   }
@@ -55,5 +71,12 @@ export class InputComponent {
     if (this.form.valid) {
       this.formSubmit.emit(this.form.value);
     }
+  }
+
+  resetForm(): void {
+    this.form.reset({
+      products: [this.createProduct()],
+      notes: ''
+    });
   }
 }

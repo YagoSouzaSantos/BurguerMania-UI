@@ -47,3 +47,22 @@ h1 {
   align-items: center;
   margin: 0 auto;
 }
+
+.snackbar {
+  border-radius: 8px;
+  overflow: hidden;
+  text-align: center;
+}
+.snackbar * {
+  background-color: transparent !important;
+}
+
+.error-snackbar {
+  background: rgb(134, 13, 13);
+}
+.success-snackbar {
+  background: rgb(7, 160, 89);
+}
+.alert-snackbar {
+  background: rgb(219, 147, 14);
+}
